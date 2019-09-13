@@ -4,26 +4,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fancy Form</title>
 
-  <!-- You may add more stuff here -->
-  <script src="script.js"></script>
-  <link href="style.css" rel="stylesheet" />
+  <!-- You may add more stuff here -->   
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">   
+  <script src="index.js"></script> 
+
 </head>
-
 <body>
+	<h1 id="title"><font size="6" color= #3d3d5c><b> &ensp;Profile Registration</b></font></h1>		
+ 	<font size="4" color= #3d3d5c><i><b> &ensp; You're one step away from smooth and easy transactions!</b></i>
+	</font>
+	
+	<div id="userPanel">
+		<img id="linQ" src="linq.JPG" alt="linQ">
+	</div>
+	
+	<!-- Side Navigation display -->
+	<div id="mySidenav" class="sidenav">
+  		<a class="closebtn" onclick="closeNav()">&times;</a>		
+  		<h1> Set Username</h1>
+		<br>
+  		&ensp;
+  		<p>This is your profile name used for any LinQ services</p>  		
+  		<form action="index.html" method="POST"> 
+  			<pre><label>Username</label> <input type="text" id= "username" name="uid" required></pre> 	       		      
+  			<pre><label>Gender</label> <select id ="gender" required>
+    			<option disabled selected>M/F</option>
+    			<option value="Female">Male</option>
+				<option value="Male">Female</option>
+    		</select></pre>
+    		<input type="submit" class="updatebtn" value="Done">
+  		</form>
+	</div>
+	<div id="mySidenav2" class="sidenav">
+  		<a class="closebtn" onclick="closeNav2()">&times;</a>
+  		<h1> Set Password</h1>
+		<br>
+  		&ensp; 
+  		<p>Please include uppercase, lowercase letters & numbers</p>
+  		<form action="index.html" method="POST"> 
+  			<pre>Password <input type="password" id="password" name="pwd" onkeyup='checkpwd();' required>  <label id='message'></label></pre>
+  			<pre>Confirm Password <input type="password" id="confirmpassword" name="confirmpwd" onkeyup='checkpwd();' required></pre>
+  			<input type="submit" id="pwdSubmit" class="updatebtn" value="Done" onclick="return confirm('Confirm Password?')"> 
+  		</form>
+	</div>	
+	<div id="mySidenav3" class="sidenav">
+  		<a class="closebtn" onclick="closeNav3()">&times;</a>
+  		<h1> Set Email</h1>
+		<br>
+  		&ensp;
+  		<p>Please give a valid Email Address </p>
+  		<form action="index.html" method="POST"> 
+  			<pre>Email Address  <input type="text" name="email" required></pre>
+  			<input type="submit" class="updatebtn" value="Done">
+  		</form>
+	</div>		
+	<div id="mySidenav4" class="sidenav">
+  		<a class="closebtn" onclick="closeNav4()">&times;</a>
+  		<h1> Change Contact No.</h1>
+		<br>
+  		&ensp;
+  		<p>Please give a valid Contact No. </p>
+  		<form action="index.html" method="POST"> 
+  			<pre>Contact No  <input type="text" name="phone" required></pre>
+  			<input type="submit" class="updatebtn" value="Done">
+  		</form>
+	</div>		
+	
+	<!-- Profile panel display -->
+	<div class="profilePanel">
+		<br><br>
+		<pre><font size="3">Username</font>  <i>Your profile title on LinQ</i></pre>
+	    <button type="button" onclick="openNav()" class="btn">Enter</button>			
+		<br><br>				
+		<pre><font size="3">Password</font>  <i>Remember your password</i></pre>
+		<button type="button" name="pwd"  onclick="openNav2()" class="btn">Enter</button>
+		<br><br>	 
+		<pre><font size="3">Email Address</font>  <i>Receive updates and notifications with this email</i></pre> 
+		<button type="button" name="email" onclick="openNav3()" class="btn">Enter</button>
+		<br><br>		
+		<pre><font size="3">Contact Number</font>  <i>Provide a number if you wanna use LinQ with your mobile</i></pre> 
+		<button type="button" name="phone" onclick="openNav4()" class="btn">Enter</button> 	
+	</div>
+	
+    <div class="panel panel-default">
+         <div class="panel-body">
+       		<i class="fab fa-twitter"></i>
+       		<i class="fab fa-facebook-f"></i>
+       		<i class="fab fa-google"></i>
+       		<i class="fas fa-envelope"></i>
+        	<i class="fas fa-rss"></i>
+         	<i class="fab fa-youtube"></i>
+         	<br>
+         	<button type="button" id="shareBtn"><font size="4"><b>Share</b></font></button>
+         	<h1 align="center"><font size="4" color= #273746>Jackaliar. All Rights Reserved. 2019</font></h1>
+        </div>
+	</div>
 
-  <!-- You may wrap the form in your own elements if necessary. -->
-  <form onsubmit="return !1">
-    <label for="input-address">Bitcoin Address</label>
-    <input id="input-address" placeholder="16q4PinynazaMYfv24juNLkbjkDQxJo2dc" />
-
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" placeholder="0.0000" />
-
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" placeholder="SMS OTP" />
-
-    <button>SEND BTC</button>
-  </form>
 </body>
-
 </html>
