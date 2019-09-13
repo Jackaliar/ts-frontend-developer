@@ -28,8 +28,8 @@
   		&ensp;
   		<p>This is your profile name used for any LinQ services</p>  		
   		<form action="index.html" method="POST"> 
-  			<pre><label>Username</label> <input type="text" id= "username" name="uid" required></pre> 	       		      
-  			<pre><label>Gender</label> <select id ="gender" required>
+  			<pre>Username <input type="text" id= "username" name="uid" required></pre> 	       		      
+  			<pre>Gender <select id ="gender" required>
     			<option disabled selected>M/F</option>
     			<option value="Female">Male</option>
 				<option value="Male">Female</option>
@@ -54,21 +54,39 @@
   		<h1> Set Email</h1>
 		<br>
   		&ensp;
-  		<p>Please give a valid Email Address </p>
+  		<p>Please provide personal contact info</p>
   		<form action="index.html" method="POST"> 
   			<pre>Email Address  <input type="text" name="email" required></pre>
+  			<pre>Contact No <input type="text" name="phone" required></pre>
   			<input type="submit" class="updatebtn" value="Done">
   		</form>
 	</div>		
 	<div id="mySidenav4" class="sidenav">
   		<a class="closebtn" onclick="closeNav4()">&times;</a>
-  		<h1> Change Contact No.</h1>
+  		<h1> Create Transaction </h1>
 		<br>
   		&ensp;
-  		<p>Please give a valid Contact No. </p>
-  		<form action="index.html" method="POST"> 
-  			<pre>Contact No  <input type="text" name="phone" required></pre>
-  			<input type="submit" class="updatebtn" value="Done">
+  		<p>Enter transaction details</p>
+  		<form onsubmit="return !1">
+  			<ul class= transInfo>
+    			<li>
+	    		<label for="input-address">Bitcoin Address</label>
+	    		<input id="input-address" placeholder="16q4PinynazaMYfv24juNLkbjkDQxJo2dc" required/>
+	    		</li>
+				<li>
+				<label for="input-amount">Amount to send</label>
+	    		<input id="input-amount" placeholder="0.0000" required/>
+	    		</li>
+				<li>
+				<label for="input-otp">OTP Authentication</label>
+	   			<input type="number" id="input-otp" placeholder="SMS OTP" />
+	   			</li>
+	   			<li> 
+	   			<br>
+	   			<button id="sendBtc">SEND BTC</button> 
+	   			</li>   			
+    		</ul>    	   
+    		<input type="submit" class="updatebtn" value="Done">
   		</form>
 	</div>		
 	
@@ -81,10 +99,10 @@
 		<pre><font size="3">Password</font>  <i>Remember your password</i></pre>
 		<button type="button" name="pwd"  onclick="openNav2()" class="btn">Enter</button>
 		<br><br>	 
-		<pre><font size="3">Email Address</font>  <i>Receive updates and notifications with this email</i></pre> 
+		<pre><font size="3">Contact Details</font>  <i>Stay connected with us for important updates and notifications</i></pre> 
 		<button type="button" name="email" onclick="openNav3()" class="btn">Enter</button>
 		<br><br>		
-		<pre><font size="3">Contact Number</font>  <i>Provide a number if you wanna use LinQ with your mobile</i></pre> 
+		<pre><font size="3">Bitcoin Transaction</font>  <i>Perform a swift transaction directly</i></pre> 
 		<button type="button" name="phone" onclick="openNav4()" class="btn">Enter</button> 	
 	</div>
 	
